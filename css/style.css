@@ -128,7 +128,7 @@ address {
 header {
   padding-top: 24px;
   padding-bottom: 25px;
-  border-bottom: 0.5px solid #cecece; */
+  border-bottom: 0.5px solid #cecece;
 }
 
 .logo {
@@ -631,7 +631,7 @@ header .flex {
   margin-top: -30px;
 }
 .examples-item {
-  flex-basis: calc(100% / 4 - 30px);
+  flex-basis: calc(100% / 3 - 30px);
   margin-left: 30px;
   margin-top: 30px;
   background: var(--white-color);
@@ -647,15 +647,12 @@ header .flex {
   background: var(--white-color);
 }
 
-.examples-item:hover,
-.examples-item:focus {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
-  outline-color: var(--accent-color);
+.examples-link {
+  display: inline-block;
 }
 
-.examples .link {
-  display: inline-block;
+.examples-title {
+  margin-top: 0;
   margin-bottom: 4px;
   width: 322px;
   font-weight: 700;
@@ -672,3 +669,77 @@ header .flex {
   line-height: 1.875;
   color: var(--primary-text-color);
 }
+
+.examples-wrap {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+}
+
+.examples-desc {
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 63px 24px;
+  margin: 0;
+
+  opacity: 0;
+  transform: translateX(-100%);
+  transition-property: transform, opacity;
+  transition-duration: 500ms, 700ms;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0;
+
+  font-size: 18px;
+  line-height: 1.56;
+  font-weight: 400;
+  color: var(--white-color);
+  background-color: rgba(33, 150, 243, 0.9);
+}
+
+.examples-link:hover,
+.examples-link:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+  outline-color: var(--accent-color);
+}
+
+.examples-link:hover .examples-desc,
+.examples-link:focus .examples-desc {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* 
+.examples-link {
+  position: relative;
+  display: block;
+}
+
+.examples-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+}
+
+.examples-wrap .photo {
+  position: absolute;
+  z-index: 1;
+}
+
+.examples-item .border {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+
+
+
+ */
