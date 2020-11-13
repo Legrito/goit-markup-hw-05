@@ -128,7 +128,7 @@ address {
 header {
   padding-top: 24px;
   padding-bottom: 25px;
-  border-bottom: 1px solid #ececec;
+  border-bottom: 0.5px solid #cecece; */
 }
 
 .logo {
@@ -139,6 +139,10 @@ header {
   font-size: 26px;
   line-height: 1.268;
   color: var(--black-text-color);
+}
+
+.logo:focus {
+  outline-color: var(--accent-color);
 }
 
 .logo-blue {
@@ -167,6 +171,7 @@ header .flex {
 }
 
 .site-nav .link {
+  position: relative;
   font-size: 14px;
   font-weight: 500;
   font-style: normal;
@@ -175,9 +180,28 @@ header .flex {
   color: var(--title-text-color);
 }
 
+.site-nav .link::after {
+  content: "";
+  display: none;
+  position: absolute;
+  transform: translateY(-50%);
+  margin: 28px 0 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+}
+.site-nav .link:hover::after,
+.site-nav .link:focus::after,
+.site-nav .link.current::after {
+  display: flex;
+  align-items: baseline;
+}
+
 .site-nav .link:hover,
 .site-nav .link:focus {
   color: var(--accent-color);
+  outline-color: var(--accent-color);
 }
 
 .site-nav .link.current {
@@ -220,6 +244,7 @@ header .flex {
 .contacts .link:hover,
 .contacts .link:focus {
   color: var(--accent-color);
+  outline-color: var(--accent-color);
 }
 
 .contacts .link:hover .mail-icon,
@@ -227,6 +252,7 @@ header .flex {
 .contacts .link:hover .phone-icon,
 .contacts .link:focus .phone-icon {
   color: var(--accent-color);
+  outline-color: var(--accent-color);
 }
 
 /* Стили героя */
@@ -344,6 +370,7 @@ header .flex {
 }
 .work-item {
   flex-basis: calc(100% / 3 - 30px);
+  position: relative;
   margin-left: 30px;
   margin-top: 30px;
 }
@@ -353,6 +380,21 @@ header .flex {
   margin-top: -30px;
 }
 
+.work-label {
+  position: absolute;
+  transform: translateY(-100%);
+  padding-top: 27px;
+  padding-bottom: 27px;
+  margin: 0;
+  width: 100%;
+  height: 70px;
+  font-weight: 700;
+  line-height: 1.14;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--white-color);
+  background-color: rgba(47, 48, 58, 0.8);
+}
 /* Стили секции "Команда" */
 
 .team.section {
@@ -421,11 +463,13 @@ header .flex {
 .social.link:hover,
 .social.link:focus {
   background-color: var(--accent-color);
+  outline-color: var(--accent-color);
 }
 
 .social.link:hover .social-icon,
 .social.link:focus .social-icon {
   fill: var(--white-color);
+  outline-color: var(--accent-color);
 }
 
 /* Стили секции Постоянные клиенты */
@@ -451,11 +495,13 @@ header .flex {
 .clients-link:hover,
 .clients-link:focus {
   border-color: var(--accent-color);
+  outline-color: var(--accent-color);
 }
 
 .clients-link:hover .client-icon,
 .clients-link:focus .client-icon {
   fill: var(--accent-color);
+  outline-color: var(--accent-color);
 }
 .clients-list > li:not(:last-child) {
   margin-right: 30px;
@@ -506,6 +552,7 @@ header .flex {
 .footer .social.link:hover,
 .footer .social.link:focus {
   background-color: var(--accent-color);
+  outline-color: var(--accent-color);
 }
 
 .footer .social-list-wrap {
@@ -574,6 +621,7 @@ header .flex {
     0px 2px 2px rgba(0, 0, 0, 0.12);
   color: var(--white-color);
   background-color: var(--accent-color);
+  outline-color: var(--accent-color);
 }
 
 /* Стили Примеров работ */
@@ -603,6 +651,7 @@ header .flex {
 .examples-item:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+  outline-color: var(--accent-color);
 }
 
 .examples .link {
